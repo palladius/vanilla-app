@@ -4,10 +4,11 @@ metadata:
   name: vanilla-app
 build:
   artifacts:
-  - image:  vanilla-app2
-    context: app2
+  - image:  vanilla-app
+    context: app
     buildpacks:
       builder: gcr.io/buildpacks/builder:v1
+    # Target platforms: [linux/amd64]
 deploy:
   kubectl:
     manifests:
