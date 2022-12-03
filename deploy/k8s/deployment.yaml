@@ -4,8 +4,16 @@ metadata:
   name: vanilla-app
   labels:
     app: vanilla-app
+# spec:
+#   clusterIP: None
+#   selector:
+#     app: vanilla-app
 spec:
-  clusterIP: None
+  ports:
+  - port: 8080
+    protocol: TCP
+  #clusterIP: None
+  type: LoadBalancer
   selector:
     app: vanilla-app
 ---
