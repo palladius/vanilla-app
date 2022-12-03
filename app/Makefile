@@ -4,4 +4,4 @@ install:
 	npm i dotenv-expand
 
 run:
-	DEBUG=myapp:* OCCASIONAL_MESSAGE='Running in debug from Makefile' npm start
+	DEBUG=myapp:* OCCASIONAL_MESSAGE='Running in debug from Makefile' LAUNCHING_HOSTNAME=`hostname` npm start

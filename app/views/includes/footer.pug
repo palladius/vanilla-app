@@ -1,9 +1,15 @@
 //- includes/foot.pug
 footer#footer
   hr
-  p Welcome to #{appname} v#{appversion} ENV=TODO -
+  p Welcome to
+    b #{app_name}
+    b v#{app_version}
+    span node_env=
+    b #{node_env}
+    span 🧑🏻‍💻
     a(href="https://github.com/palladius/vanilla-app") VanillaApp Code
-
+    hh on 💻
+      b #{hostname}
 
 //  p Copyright (c) foobar
 

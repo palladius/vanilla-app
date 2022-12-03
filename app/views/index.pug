@@ -1,23 +1,25 @@
 extends layout
 
 block content
-  h1= "#{appname} title"
   h1= title
+  h2= "#{app_name} title (clearly I have some more to learn in JS 😏)"
 
   p Welcome to #{title}.
     span This code is in here:
       tt app/views/index.pug
-    span and i cant seem to be able to say appname= #{appname}
-      b  #{appname}
+    span and i cant seem to be able to say appname=
+      b  #{app_name}
   h2= "ENV vars"
   //p ENV=#{ENV}
   //p OCCASIONAL_MESSAGE=#{OCCASIONAL_MESSAGE}
-  - var listOfEnvVars = ["OCCASIONAL_MESSAGE", "NODE_ENV", "USER", "env", "PORT", "MY_SECRET_KEY", 'GOOGLE_KEY']
-  p List of ENV vars:
-  each item in listOfEnvVars
-    li= item
-      span =#{process.env.item}
-  h3 dotenv
+  - var listOfEnvVars = ["OCCASIONAL_MESSAGE", "HOSTNAME", "LAUNCHING_HOSTNAME", "NODE_ENV", "USER", "env", "PORT", "MY_SECRET_KEY", 'GOOGLE_KEY']
+  //- p List of ENV vars:
+  //- each item in listOfEnvVars
+  //-   li= item
+  //-     span =#{process.env.item}
+  p with dotenv cos I'm unable to do the rubyist
+    tt process.env.send(env_varname)
+    span .. so instead I iterate thru dotenv ENV vars and i check if its in my group of friends:
   //- p dotenv #{dotenv}
   //- p dotenvExpand #{dotenvExpand}
   //- p dotenvConfig #{dotenvConfig}
@@ -35,11 +37,11 @@ block content
 
   // iteration https://pugjs.org/language/iteration.html
 
-  ul
-  each val in [1, 2, 3, 4, 5]
-    li= val
+  //- ul
+  //- each val in [1, 2, 3, 4, 5]
+  //-   li= val
 
-  - var list = ["Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis"]
-  each item in list
-    li= item
+  //- - var list = ["Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis"]
+  //- each item in list
+  //-   li= item
 
