@@ -4,7 +4,7 @@ metadata:
   name: vanilla-app
 build:
   artifacts:
-  - image: app2
+  - image:  vanilla-app2
     context: app2
     buildpacks:
       builder: gcr.io/buildpacks/builder:v1
@@ -12,4 +12,4 @@ deploy:
   kubectl:
     manifests:
     #- app2/deployment.yaml
-    - deploy/app2-k8s/*.yaml
+    - deploy/k8s/*.yaml

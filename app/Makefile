@@ -1,6 +1,5 @@
-
 install:
-	npm install express
+	npm install
 
 run:
-	node app.js
+	DEBUG=myapp:* npm start
