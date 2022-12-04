@@ -10,8 +10,8 @@ var logger = require('morgan');
 
 //var appname = '☕ Expresso'
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var statuszRouter = require('./routes/statusz');
+// var usersRouter = require('./routes/statusz');
+// var statusRouter = require('./routes/status');
 
 var app = express();
 

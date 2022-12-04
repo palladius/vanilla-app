@@ -30,8 +30,8 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/statusz', function(req, res, next) {
-  res.render('statusz', {
+router.get('/status', function(req, res, next) {
+  res.render('status', {
     title: 'Simple Expresso App',
     app_name: app_name,
     deploy_target: process.env.DEPLOY_TARGET,
@@ -40,8 +40,8 @@ router.get('/statusz', function(req, res, next) {
   });
 });
 
-/* GET users listing. */
-router.get('/users', function(req, res, next) {
+/* GET short STATUSZ listing. */
+router.get('/statusz', function(req, res, next) {
   const statusz = `app_name=${app_name} app_version=${version_buffer} node_env=${process.env.NODE_ENV} deploy_target=${deploy_target}`
   res.send(statusz);
 //  res.send('respond with a resource');
