@@ -1,4 +1,4 @@
-apiVersion: skaffold/v2beta29
+apiVersion: skaffold/v3 # v2beta29
 kind: Config
 metadata:
   name: vanilla-app
@@ -8,9 +8,38 @@ build:
     context: app
     buildpacks:
       builder: gcr.io/buildpacks/builder:v1
-    # Target platforms: [linux/amd64]
+# manifests:
+#   kustomize:
+#     paths: ["deploy/k8s/overlays/dev"]
 deploy:
-  kubectl:
+  cloudrun:
+    projectid: cicd-platinum-test032
+    region: us-central1
+# no deploy without module..
+# deploy:
+#       kustomize:
+#         paths: ["deploy/k8s/overlays/dev"]
+    # Target platforms: [linux/amd64]
+# deploy:
+#   kubectl:
+#     manifests:
+#     #- app2/deployment.yaml
+#     - deploy/k8s/*.yaml
+profiles:
+  - name: dev
     manifests:
-    #- app2/deployment.yaml
-    - deploy/k8s/*.yaml
+      kustomize:
+        paths: ["deploy/k8s/overlays/dev"]
+    #deploy
+    build:
+      artifacts:
+        # SKU stands for Skaffold + Kustomize
+        - image: sku-vanilla-app-image
+          context: app
+          buildpacks:
+            builder: gcr.io/buildpacks/builder:v1
+
+  # - name: prod
+  #   deploy:
+  #     kustomize:
+  #       paths: ["deploy/k8s/overlays/prod"]

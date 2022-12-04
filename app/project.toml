@@ -1,0 +1,8 @@
+
+
+[[build.env]]
+name="HELLO"
+value="WORLD"
+# BUILT_BY_HOSTNAME -> embed the BUILDING host which is pretty sweet.
+# BUILT_BY_UNAME => add the uname of building thingy.
+
