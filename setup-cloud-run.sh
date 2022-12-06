@@ -24,3 +24,11 @@ gcloud iam service-accounts add-iam-policy-binding ricc-skaffold-runner@$GOOGLE_
     --role roles/iam.serviceAccountUser \
     --member "serviceAccount:ricc-skaffold-deployer@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
     --project $GOOGLE_CLOUD_PROJECT
+
+
+#### public service on the internet
+# https://cloud.google.com/run/docs/securing/managing-access?_ga=2.206668115.-1565668195.1646577657
+# gcloud run services add-iam-policy-binding [SERVICE_NAME] \
+#     --member="allUsers" \
+#     --role="roles/run.invoker"
+# gcloud run deploy [SERVICE_NAME] ... --allow-unauthenticated

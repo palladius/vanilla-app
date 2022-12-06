@@ -15,7 +15,7 @@ block content
   h2= "ENV vars"
   //p ENV=#{ENV}
   //p OCCASIONAL_MESSAGE=#{OCCASIONAL_MESSAGE}
-  - var listOfEnvVars = ["OCCASIONAL_MESSAGE", "TEST_DB_PASS", "HOSTNAME", "LAUNCHING_HOSTNAME", "NODE_ENV", "USER", "env", "PORT", "MY_SECRET_KEY", 'GOOGLE_KEY']
+  //- var listOfEnvVars = ["OCCASIONAL_MESSAGE", "DEPLOY_TARGET", "TEST_DB_PASS", "HOSTNAME", "LAUNCHING_HOSTNAME", "NODE_ENV", "USER", "env", "PORT", "MY_SECRET_KEY", 'GOOGLE_KEY']
   //- p List of ENV vars:
   //- each item in listOfEnvVars
   //-   li= item
@@ -27,12 +27,19 @@ block content
   //- p dotenvExpand #{dotenvExpand}
   //- p dotenvConfig #{dotenvConfig}
   //- p process.env #{process.env}
-  for v,k in process.env
-    if listOfEnvVars.includes(k)
-      li= k
+  // .sort()
+  //- h3 done poorly
+  //- for v,k in process.env
+  //-   if listOfEnvVars.includes(k)
+  //-     li= k
+  //-       span =
+  //-       b #{v}
+  h3 Done well: See it. Say it. Sort()ed
+  for key in listOfEnvVars.sort()
+      //b #{process.env[key]}
+      li= key
         span =
-        b #{v}
-
+        b #{process.env[key]}
   h2= 'About Express and Pug'
   p Riccardo: when you can continue, continue from here:
     a(href="https://expressjs.com/en/starter/basic-routing.html") 🔗 expressjs basic routing

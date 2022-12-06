@@ -15,6 +15,17 @@ var dotenvConfig = require('dotenv').config();
 const app_name =  '☕ Express0'
 const deploy_target= process.env.DEPLOY_TARGET
 
+const listOfEnvVars = [
+  "OCCASIONAL_MESSAGE", "DEPLOY_TARGET", "TEST_DB_PASS",
+  "LAUNCHING_HOSTNAME", "NODE_ENV", "HOSTNAME_MANHOUSE",
+  "USER", "env", "PORT", "MY_SECRET_KEY", 'GOOGLE_KEY',
+  'EDITOR',
+]
+
+// I manually patch the ENV[] at 'manhouse'
+process.env.HOSTNAME_MANHOUSE = require('os').hostname()
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   require('os');
@@ -26,6 +37,7 @@ router.get('/', function(req, res, next) {
     node_env: process.env.NODE_ENV,
     deploy_target: process.env.DEPLOY_TARGET,
     hostname: require('os').hostname(),
+    listOfEnvVars: listOfEnvVars,
     // JAVA: InetAddress.getLocalHost().getHostName()
 //, //     location.hostname,
   });

@@ -79,5 +79,6 @@ profiles:
       cloudrun:
         projectid: cicd-platinum-test032
         region: us-central1
+        #allow-unauthenticated: true
 
 >>>>>>> d707e3a (it works! CloudRun deployed!)

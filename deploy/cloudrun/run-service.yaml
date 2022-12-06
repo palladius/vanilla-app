@@ -4,10 +4,19 @@ apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
 #  name: deploy-to-cloudrun
-  name: vanilla-app-on-run
+  name: vanilla-app-on-run2
+  annotations:
+#    run.googleapis.com/ingress: all
+    palladi.us/ultimate-answer: 42 # testing custom annotation - it works!
+    palladi.us/github-repo: 'github.com:palladius/vanilla-app'
+    #run.googleapis.com/ingress-status: all
 spec:
   template:
     spec:
       #serviceAccountName: <service_account>
       containers:
       - image: sku-vanilla-app # vanilla-app
+
+# TODO(ricc): remove authentication, I presume its not done here.
+# Changing authentication to allow unauthenticated invocations will assign the 'allUsers' principal type the 'Cloud Run Invoker' IAM role on this Cloud Run service. It will make this service publicly accessible to anyone on the Internet
+# moe info: https://cloud.google.com/run/docs/securing/managing-access?_ga=2.206668115.-1565668195.1646577657

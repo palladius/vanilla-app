@@ -42,3 +42,5 @@ push-to-cloudrun:
 
 kubectl-get-all:
 	kubectl get all | grep 'vanilla'
+skaffold-deploy-to-cloudrun:
+	skaffold run -p wietse
