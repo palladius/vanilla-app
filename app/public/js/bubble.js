@@ -2,9 +2,9 @@
 // Bubble settings
 // -------------------------------------------------------
 i = document.querySelector('.bubble');
-xmlns = "http://www.w3.org/2000/svg";
+xmlns = 'http://www.w3.org/2000/svg';
 b_stroke = 3; // Bubble stroke thickness
-t_length = 50 // Tail length
+t_length = 50; // Tail length
 b_width = i.clientWidth; // Bubble width
 b_height = i.clientHeight; // Bubble height
 
@@ -139,16 +139,16 @@ t_path += 'z'; // Close path
 // -------------------------------------------------------
 // Construction
 // -------------------------------------------------------
-b_svg = document.createElementNS(xmlns, "svg");
-b_svg_path_circle = document.createElementNS(xmlns, "path");
-t_svg_path1 = document.createElementNS(xmlns, "path");
-t_svg_path2 = document.createElementNS(xmlns, "path");
+b_svg = document.createElementNS(xmlns, 'svg');
+b_svg_path_circle = document.createElementNS(xmlns, 'path');
+t_svg_path1 = document.createElementNS(xmlns, 'path');
+t_svg_path2 = document.createElementNS(xmlns, 'path');
 
 
 // Set the SVG attributes
-b_svg.setAttribute("viewBox", "0 0 " + b_width + " " + (b_height + t_length));
-b_svg.setAttribute("width", b_width);
-b_svg.setAttribute("height", (b_height + t_length));
+b_svg.setAttribute('viewBox', '0 0 ' + b_width + ' ' + (b_height + t_length));
+b_svg.setAttribute('width', b_width);
+b_svg.setAttribute('height', (b_height + t_length));
 
 // Set the bubble attributes
 b_svg_path_circle.setAttribute('d', b_path);
@@ -184,7 +184,7 @@ i.appendChild(b_svg);
 
 /*
   * Bezier Function
-  * Get X,Y by t 
+  * Get X,Y by t
   * Refer to https://pomax.github.io/bezierinfo/
   * @params a,b,c,d {x:x,y:y}
   * @params t is between 0-1

@@ -4,6 +4,7 @@ var router = express.Router();
 //https://melvingeorge.me/blog/get-all-the-contents-from-file-as-string-nodejs
 const fs = require("fs");
 const version_buffer = fs.readFileSync("VERSION");
+const bubblejs_filecontent = fs.readFileSync("public/js/bubble.js");
 
 //require('dotenv').config();
 var dotenv = require('dotenv')
@@ -54,6 +55,8 @@ router.get('/bubble', function(req, res, next) {
     deploy_target: process.env.DEPLOY_TARGET,
     app_version: version_buffer,
     node_env: process.env.NODE_ENV,
+    OCCASIONAL_MESSAGE: process.env.OCCASIONAL_MESSAGE,
+    bubblejs_filecontent: bubblejs_filecontent,
   });
 });
 

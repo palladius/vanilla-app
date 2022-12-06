@@ -19,13 +19,26 @@ block content
     p DevTools failed to load source map: Could not load content for chrome-extension://plfbhieilacgkdnphcdehdnhjenmnima/jquery.min.map: System error: net::ERR_BLOCKED_BY_CLIENT
 
   h3= 'Bubble test'
-  div#riccardo_id.bubble Here is your bubble1:
+  p Here is your parametric bubble:
+  //div#riccardo_id.bubble
     div.bubble__inner.
-        Check it out.<br/>
-        I'm making a speech<br>
-        bubble. TODO(ricc): add ENV var here.
-//-   div.bubble
-//-     span.bubble__inner.
+        Riccardo says:<br/>
+        <b>#{OCCASIONAL_MESSAGE}</b><br/>
+
+  //img src=ricc-says-movember.jpg
+  //img(src='./images/ricc-says-movember.jpg', height='300')
+  table(border=1, style='valign=center')
+    tr
+      td
+        div#riccardo_id.bubble
+          div.bubble__inner.
+            Riccardo says:<br/>
+            <b>#{OCCASIONAL_MESSAGE}</b><br/>
+    tr
+      td
+        img(src='./images/ricc-says-movember.jpg', height='300')
+//-   div.bubble2
+//-     span.bubble__inner2.
 //-       Testing the dot<br/>
 //-       and whatnot.
 //-       with absolute freedome

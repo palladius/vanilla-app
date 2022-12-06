@@ -21,23 +21,7 @@ build:
       context: app
       buildpacks:
         builder: gcr.io/buildpacks/builder:v1
-# manifests:
-#   kustomize:
-#     paths: ["deploy/k8s/overlays/dev"]
-# deploy:
-#   cloudrun:
-#     projectid: cicd-platinum-test032
-#     region: us-central1
-# no deploy without module..
-# deploy:
-#       kustomize:
-#         paths: ["deploy/k8s/overlays/dev"]
-    # Target platforms: [linux/amd64]
-# deploy:
-#   kubectl:
-#     manifests:
-#     #- app2/deployment.yaml
-#     - deploy/k8s/*.yaml
+
 profiles:
   - name: dev
     deploy:
