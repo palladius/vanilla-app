@@ -2,8 +2,14 @@ extends layout
 
 block content
   h1 Long HTML Status
-  p See /statusz for single line, simple string
-  p 📈app_name=#{app_name}
-  p 📈DEPLOY_TARGET=#{deploy_target}
-  p 📈app_version=#{app_version}
-  p 📈node_env=#{node_env}
+  p See
+    a(href="/statusz") /statusz
+    span for single line, simple string
+  p 📈app_name=
+    b #{app_name}
+  p 📈DEPLOY_TARGET=
+    b #{deploy_target}
+  p 📈app_version=
+    b #{app_version}
+  p 📈node_env=
+    b #{node_env}

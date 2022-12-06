@@ -40,7 +40,10 @@ build:
 #     - deploy/k8s/*.yaml
 profiles:
   - name: dev
-    #kube-context: gke_cicd-platinum-test031_us-central1_cicd-dev
+    deploy:
+      # TODO(create with pulumi)
+      # gcloud container clusters get-credentials cicd-canary --region us-central1 --project cicd-platinum-test031
+      kubeContext: 'gke_cicd-platinum-test031_us-central1_cicd-dev'
     manifests:
       kustomize:
         paths: ["deploy/k8s/overlays/dev"]
