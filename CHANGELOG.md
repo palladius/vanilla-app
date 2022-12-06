@@ -7,4 +7,5 @@
 
 # App
 
+2022-12-04 v0.9.2 Added SASS for comicbook feature.
 2022-12-04 v0.9.1 Added deploy_target and now all 3 pages work!
