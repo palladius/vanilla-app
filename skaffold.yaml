@@ -36,6 +36,7 @@ profiles:
       kustomize:
         paths: ["deploy/k8s/overlays/dev"]
 
+<<<<<<< HEAD
   ########################################################################
   # $ skaffold dev -p wietse
   # Used to test deployment to Cloud Run
@@ -62,3 +63,21 @@ profiles:
     manifests:
       kustomize:
         paths: ["deploy/k8s/overlays/prod"]
+=======
+  - name: prod
+    manifests:
+      kustomize:
+        paths: ["deploy/k8s/overlays/prod"]
+
+
+  # inspired by Christoph https://github.com/cgrotz/blog-examples/blob/main/cloud-deploy-to-cloud-run/skaffold.yaml
+  - name: cloudrun
+    manifests:
+      rawYaml:
+      - deploy/cloudrun/run-service.yaml
+    deploy:
+      cloudrun:
+        projectid: cicd-platinum-test032
+        region: us-central1
+
+>>>>>>> d707e3a (it works! CloudRun deployed!)

@@ -25,6 +25,7 @@ skaffold-dev-in-cloudrun:
 # kubectl repo is useless for Cloud Run, but its set with a certain build repo. :)
 #SKAFFOLD_DEFAULT_REPO='gke_cicd-platinum-test031_us-central1_cicd-dev'
 	skaffold dev -p wietse --default-repo 'us-central1-docker.pkg.dev/cicd-platinum-test031/my-skaffold-cornucopia/sku-vanilla-app-image'
+#skaffold dev -p cloudrun
 
 skaffold-render-diff:
 	skaffold render -p prod | tee t.prod

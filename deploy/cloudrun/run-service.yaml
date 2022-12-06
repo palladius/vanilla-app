@@ -1,0 +1,13 @@
+# copied from my buddy https://github.com/cgrotz/blog-examples/blob/main/cloud-deploy-to-cloud-run/run-dev.yaml
+
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+#  name: deploy-to-cloudrun
+  name: vanilla-app-on-run
+spec:
+  template:
+    spec:
+      #serviceAccountName: <service_account>
+      containers:
+      - image: sku-vanilla-app # vanilla-app
