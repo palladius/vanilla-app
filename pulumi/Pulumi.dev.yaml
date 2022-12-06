@@ -1,0 +1,8 @@
+config:
+  gcp:project: cicd-platinum-test032
+  gcp:region: us-central1
+  vanilla:existingGkeCluster: cicd-dev
+  vanilla:appPath: ./app
+  vanilla:errorDocument: error.html
+  vanilla:indexDocument: index.html
+  vanilla:sitePath: ./www

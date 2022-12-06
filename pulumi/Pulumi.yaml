@@ -1,0 +1,6 @@
+name: vanilla
+description: VanillaApp IaaC on Pulumi Python
+runtime:
+    name: python
+    options:
+        virtualenv: venv
