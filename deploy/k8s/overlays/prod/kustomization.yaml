@@ -5,27 +5,25 @@ resources:
   - ../../base
   - namespace.yaml
 
-
 # copied from https://github.com/palladius/clouddeploy-platinum-path/blob/main/apps/app03/k8s/overlays/production/kustomization.yaml
-# apiVersion: kustomize.config.k8s.io/v1beta1
-# kind: Kustomization
-# resources:
-#   - ../../base
-# components:
-#   - ../../../../../components/common/prod
-# replicas:
-#   - name: app03-kunode
-#     # If you have plenty of capacity, please turn to 9 (9 vs 1 is 90%/10%) but 4 is a better example as it demonstrates (4 vs 1 is 80%/20%) with half the pods.
-#     count: 4
-# patches:
-# - patch: |-
-#     - op: add
-#       path: "/spec/template/spec/containers/0/env/-"
-#       value:
-#         name: CLOUD_DEPLOY_TARGET
-#         value: "04 Prod - Production"
-#   target:
-#     kind: Deployment
-#     name: app03-kunode
-# #commonLabels:
-# #  solution-type: four # app03 only. Do not add it! Unless you also add it to Canary too, or the selector will stop selecting both.
+#####################################################
+# PROD: Add replicas and add ENV for Cloud Deploy :)
+#####################################################
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+replicas:
+  - name: sku-vanilla-app
+    # In prod we need more capacity :)
+    count: 3
+patches:
+- patch: |-
+    - op: add
+      path: "/spec/template/spec/containers/0/env/-"
+      value:
+        name: DEPLOY_TARGET
+        value: "Prod (Production)"
+  target:
+    kind: Deployment
+    name: sku-vanilla-app

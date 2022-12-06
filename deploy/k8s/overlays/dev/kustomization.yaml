@@ -36,3 +36,29 @@ resources:
 #   target:
 #     kind: Deployment
 #     name: app03-kunode
+#####################################################
+# PROD: Add replicas and add ENV for Cloud Deploy :)
+#####################################################
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+# replicas:
+#   - name: sku-vanilla-app
+#     # In prod we need more capacity :)
+#     count: 3
+patches:
+- patch: |-
+    - op: add
+      path: "/spec/template/spec/containers/0/env/-"
+      value:
+        name: DEPLOY_TARGET
+        value: "Dev (Development)"
+    - op: add
+      path: "/spec/template/spec/containers/0/env/-"
+      value:
+        name: FAVORITE_COLOR
+        value: "YELLOW"
+  target:
+    kind: Deployment
+    name: sku-vanilla-app

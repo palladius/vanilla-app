@@ -23,8 +23,10 @@ build:
       buildpacks:
         builder: gcr.io/buildpacks/builder:v1
 profiles:
+  ########################################################################
   # $ skaffold dev -p dev
   # Used for development, deploys to a DEV GKE cluster.
+  ########################################################################
   - name: dev
     deploy:
       # TODO(create with pulumi)
@@ -34,8 +36,10 @@ profiles:
       kustomize:
         paths: ["deploy/k8s/overlays/dev"]
 
+  ########################################################################
   # $ skaffold dev -p wietse
   # Used to test deployment to Cloud Run
+  ########################################################################
   - name: wietse # cloudrun-test
     manifests:
       rawYaml:
@@ -48,11 +52,11 @@ profiles:
         region: asia-southeast2 # I love Jakarta even though i dont like Java :)
         # name is not here... but in the YAML.
 
+  ########################################################################
   # $ skaffold dev -p prod
   # Used in prod, deploys to a PROD GKE cluster.
+  ########################################################################
   - name: prod
-    #activation:
-    #kubectl:
     deploy:
       kubeContext: 'gke_cicd-platinum-test031_us-central1_cicd-prod'
     manifests:

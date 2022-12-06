@@ -32,3 +32,6 @@ spec:
       - name: sku-vanilla-app
         # created with Skaffold+Kustomize
         image: sku-vanilla-app-image
+        env:
+        - name: APP_NAME
+          value: A Wonderful App in NodeJS + Express
