@@ -17,13 +17,16 @@ const deploy_target= process.env.DEPLOY_TARGET
 
 const listOfEnvVars = [
   "OCCASIONAL_MESSAGE", "DEPLOY_TARGET", "TEST_DB_PASS",
-  "LAUNCHING_HOSTNAME", "NODE_ENV", "HOSTNAME_MANHOUSE",
-  "USER", "env", "PORT", "MY_SECRET_KEY", 'GOOGLE_KEY',
-  'EDITOR',
+  "HOSTNAME", "LAUNCHING_HOSTNAME", "LONGHOSTNAME_MANHOUSE",
+  "NODE_ENV",
+  "USER", "env", "PORT", "MY_SECRET_KEY",
+  //'EDITOR','GOOGLE_KEY',
 ]
 
 // I manually patch the ENV[] at 'manhouse'
-process.env.HOSTNAME_MANHOUSE = require('os').hostname()
+process.env.LONGHOSTNAME_MANHOUSE = require('os').hostname()
+process.env.HOSTNAME = process.env.LONGHOSTNAME_MANHOUSE.split('.')[0]
+
 
 
 /* GET home page. */

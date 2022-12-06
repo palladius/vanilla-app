@@ -7,6 +7,7 @@ metadata:
   name: vanilla-app-on-run2
   annotations:
 #    run.googleapis.com/ingress: all
+    #autoscaling.knative.dev/minScale: 1
     palladi.us/ultimate-answer: 42 # testing custom annotation - it works!
     palladi.us/github-repo: 'github.com:palladius/vanilla-app'
     #run.googleapis.com/ingress-status: all
