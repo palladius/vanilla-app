@@ -17,12 +17,14 @@ metadata:
 build:
   artifacts:
     # SKU stands for Skaffold + Kustomize
-    - image: sku-vanilla-app-image
-      context: app
+    - context: app
+      #image: sku-vanilla-app-image
+      image: us-central1-docker.pkg.dev/cicd-platinum-test031/my-skaffold-cornucopia/sku-vanilla-app-image
       buildpacks:
         builder: gcr.io/buildpacks/builder:v1
-
 profiles:
+  # $ skaffold dev -p dev
+  # Used for development, deploys to a DEV GKE cluster.
   - name: dev
     deploy:
       # TODO(create with pulumi)
@@ -32,17 +34,22 @@ profiles:
       kustomize:
         paths: ["deploy/k8s/overlays/dev"]
 
+  # $ skaffold dev -p wietse
+  # Used to test deployment to Cloud Run
   - name: wietse # cloudrun-test
     manifests:
       rawYaml:
       - deploy/cloudrun/*.yaml
     deploy:
+      #kube-context: gke_cicd-platinum-test031_us-central1_cicd-dev
       cloudrun:
         # TODO(pulumi): enable Cloud Run API here.
         projectid: cicd-platinum-test031
         region: asia-southeast2 # I love Jakarta even though i dont like Java :)
         # name is not here... but in the YAML.
-  # #kube-context:
+
+  # $ skaffold dev -p prod
+  # Used in prod, deploys to a PROD GKE cluster.
   - name: prod
     #activation:
     #kubectl:
