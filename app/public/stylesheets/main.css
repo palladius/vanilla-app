@@ -4,9 +4,6 @@
 h1 {
   color: brown;
 }
-tt {
-  color: green;
-}
 
 /*
    copied from https://jsfiddle.net/paulhumaan/3tjaf0yL/131/
@@ -14,7 +11,7 @@ tt {
 body {
   background-color: #f8f8f8;
   padding: 40px;
-  /* text-align: center; */
+  text-align: center;
 }
 
 .bubble {

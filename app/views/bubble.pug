@@ -1,0 +1,32 @@
+extends layout
+
+
+block content
+  // pug cheatsheet: https://devhints.io/pug
+  h1= title
+  p Bubble example. Copied from this article and this code.
+  p Article: https://www.humaan.com/blog/creating-comic-book-speech-bubbles-with-svg-and-javascript/
+  p code: https://jsfiddle.net/paulhumaan/3tjaf0yL/131/
+  a(href="https://jsfiddle.net/paulhumaan/3tjaf0yL/131/") 🔗 JSFiddle example
+
+  p The Js source is loaded by HTNL, I dont know how to make the browser execute it.
+    If I run the code on browser developer console it DOES work :) https://screenshot.googleplex.com/5t2vmCUxWzb3bQx
+
+  h3 Error
+    p bubble.js:8 Uncaught TypeError: Cannot read properties of null (reading 'clientWidth')
+    p at bubble.js:8:13
+    p (anonymous) @ bubble.js:8
+    p DevTools failed to load source map: Could not load content for chrome-extension://plfbhieilacgkdnphcdehdnhjenmnima/jquery.min.map: System error: net::ERR_BLOCKED_BY_CLIENT
+
+  h3= 'Bubble test'
+  div#riccardo_id.bubble Here is your bubble1:
+    div.bubble__inner.
+        Check it out.<br/>
+        I'm making a speech<br>
+        bubble. TODO(ricc): add ENV var here.
+//-   div.bubble
+//-     span.bubble__inner.
+//-       Testing the dot<br/>
+//-       and whatnot.
+//-       with absolute freedome
+//-       over multiple lines.

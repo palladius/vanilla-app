@@ -9,6 +9,8 @@ html
     // npm run scss -> sass --watch src/scss/main.scss public/styles/main.css
     link(rel='stylesheet', href='/stylesheets/main.css')
     // help the CSS doesnt work, and Im pretty sure its also not calling the JS stuff.
+    // https://pugjs.org/language/includes.html
+    script(src='/js/bubble.js')
   body
     include includes/header.pug
     block content

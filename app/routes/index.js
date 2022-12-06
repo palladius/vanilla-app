@@ -47,4 +47,16 @@ router.get('/statusz', function(req, res, next) {
 //  res.send('respond with a resource');
 });
 
+router.get('/bubble', function(req, res, next) {
+  res.render('bubble', {
+    title: 'Sample bubble page',
+    app_name: app_name,
+    deploy_target: process.env.DEPLOY_TARGET,
+    app_version: version_buffer,
+    node_env: process.env.NODE_ENV,
+  });
+});
+
+
+
 module.exports = router;

@@ -20,6 +20,8 @@ app.use(express.static(__dirname + '/public'));
 // Assets Riccardo found here https://dev.to/elvelive/setting-up-sass-in-an-express-app-jk4
 app.use('/assets', express.static(path.join(__dirname, '../public')))
 
+// ERROR: i = document.querySelector('.bubble');
+//var tools = require('./public/js/bubble.js');
 
 
 // view engine setup
@@ -33,8 +35,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-//app.use('/users', usersRouter);
-//app.use('/statusz', statuszRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
