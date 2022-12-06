@@ -1,13 +1,26 @@
+# I want to experiment with a HYDRATED yaml (embedding project ids and such)
+# just to see how it goes across multiple machines. I never do that, I just
+# want to see the experience in my vanilla app.
+#
+
 apiVersion: skaffold/v3 # v2beta29
 kind: Config
 metadata:
   name: vanilla-app
+# build:
+#   artifacts:
+#   - image:  vanilla-app
+#     context: app
+#     buildpacks:
+#       builder: gcr.io/buildpacks/builder:v1
+# common build for all
 build:
   artifacts:
-  - image:  vanilla-app
-    context: app
-    buildpacks:
-      builder: gcr.io/buildpacks/builder:v1
+    # SKU stands for Skaffold + Kustomize
+    - image: sku-vanilla-app-image
+      context: app
+      buildpacks:
+        builder: gcr.io/buildpacks/builder:v1
 # manifests:
 #   kustomize:
 #     paths: ["deploy/k8s/overlays/dev"]
@@ -30,16 +43,9 @@ profiles:
     manifests:
       kustomize:
         paths: ["deploy/k8s/overlays/dev"]
-    #deploy
-    build:
-      artifacts:
-        # SKU stands for Skaffold + Kustomize
-        - image: sku-vanilla-app-image
-          context: app
-          buildpacks:
-            builder: gcr.io/buildpacks/builder:v1
 
-  # - name: prod
-  #   deploy:
-  #     kustomize:
-  #       paths: ["deploy/k8s/overlays/prod"]
+
+  - name: prod
+    manifests:
+      kustomize:
+        paths: ["deploy/k8s/overlays/prod"]
