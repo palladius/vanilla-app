@@ -6,7 +6,7 @@
 apiVersion: skaffold/v3 # v2beta29
 kind: Config
 metadata:
-  name: vanilla-app
+  name: vanilla-app-skaffold-configuration # just to make sure you dont confuse it.
 # build:
 #   artifacts:
 #   - image:  vanilla-app
@@ -32,12 +32,16 @@ profiles:
       kustomize:
         paths: ["deploy/k8s/overlays/dev"]
 
-  - name: cloudrun-test
+  - name: wietse # cloudrun-test
+    manifests:
+      rawYaml:
+      - deploy/cloudrun/*.yaml
     deploy:
       cloudrun:
-        projectid: cicd-platinum-test032
-        region: us-central1
-
+        # TODO(pulumi): enable Cloud Run API here.
+        projectid: cicd-platinum-test031
+        region: asia-southeast2 # I love Jakarta even though i dont like Java :)
+        # name is not here... but in the YAML.
   # #kube-context:
   - name: prod
     #activation:

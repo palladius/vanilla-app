@@ -3,6 +3,7 @@
 This is progress on the overall Vanilla Project (pulumi, skaffold, build, deploy, ...)
 
 ```
+2022-12-06 v0.5 Cloud run works!
 2022-12-04 v0.4 Substantial app work.
 2022-12-04 v0.3 Working on skaffold+kustomize
 2022-12-03 v0.2 Seems like yesterday when this was just a silly helloworld app. Look at us now!

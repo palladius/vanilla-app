@@ -18,9 +18,12 @@ skaffold-deploy:
 
 # new multi-situation DEV/PROD with SK+KU
 skaffold-dev-in-dev:
-	kaffold dev -p dev
+	skaffold dev -p dev
 skaffold-dev-in-prod:
-	kaffold dev -p prod
+	skaffold dev -p prod
+skaffold-dev-in-cloudrun:
+	skaffold dev -p wietse
+
 skaffold-render-diff:
 	skaffold render -p prod | tee t.prod
 	skaffold render -p dev  | tee t.dev
@@ -30,3 +33,6 @@ skaffold-config:
 	kubectl config current-context
 	kubectl config get-contexts
 	skaffold config list --all
+
+push-to-cloudrun:
+	skaffold deploy -p wietse
