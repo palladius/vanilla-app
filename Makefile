@@ -1,5 +1,8 @@
 
-
+install:
+# this doesnt work: creates opackage-lock.json HERE :)
+#make -C app/ install
+	cd app && make install
 run:
 	echo Running in debug mode
 	cd app && make run
@@ -23,3 +26,7 @@ skaffold-render-diff:
 	skaffold render -p dev  | tee t.dev
 	diff t.prod t.dev
 
+skaffold-config:
+	kubectl config current-context
+	kubectl config get-contexts
+	skaffold config list --all

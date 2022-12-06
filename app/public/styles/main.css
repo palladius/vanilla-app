@@ -1,0 +1,44 @@
+/*
+    Added by ricc to test SASS: https://dev.to/elvelive/setting-up-sass-in-an-express-app-jk4
+*/
+h1 {
+  color: red;
+}
+
+/*
+   copied from https://jsfiddle.net/paulhumaan/3tjaf0yL/131/
+*/
+body {
+  background-color: #f8f8f8;
+  padding: 40px;
+  text-align: center;
+}
+
+.bubble {
+  display: inline-block;
+  line-height: 1.2;
+  text-align: center;
+  padding: 0.8em 1em 0.7em;
+  font-size: 1.35em;
+  color: black;
+  white-space: nowrap;
+  position: relative;
+}
+.bubble__inner {
+  position: relative;
+  z-index: 2;
+}
+.bubble__inner::selection {
+  background-color: black;
+  color: white;
+}
+.bubble svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*# sourceMappingURL=main.css.map */

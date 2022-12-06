@@ -3,7 +3,7 @@ kind: Kustomization
 # maybe should be silly annotations..
 commonLabels:
   riccardo-app-name: vanilla-app
-  riccardo-code: 'https://github.com/palladius/vanilla-app'
+  #riccardo-code: 'https://github.com/palladius/vanilla-app'
 resources:
   - vanilla-deployment.yaml # Deployment + Service
 # components:

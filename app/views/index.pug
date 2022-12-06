@@ -1,11 +1,14 @@
 extends layout
 
+
 block content
+  // pug cheatsheet: https://devhints.io/pug
   h1= title
   h2 #{app_name} #{title} 😏
+  //.h3= `${app_name} ${title} 😏 - with backquotes IT WORKS!`
 
   p Welcome to #{title}.
-    span This code is in here:
+    span 'This code is in here: '
       tt app/views/index.pug
     span and i cant seem to be able to say appname=
       b  #{app_name}
@@ -37,6 +40,26 @@ block content
     a(href="https://pugjs.org/language/includes.html") 🔗 Pug Cheatsheet
 
   // iteration https://pugjs.org/language/iteration.html
+
+  h3= 'Bubble test'
+  div#riccardo_id.bubble Here is your bubble1:
+    span.bubble__inner Check it out.<br/>I'm making a speech<br>bubble. TODO(ricc): add ENV var here.
+  div.bubble
+    span.bubble__inner.
+      Testing the dot
+      and whatnot.
+      with absolute freedome
+      over multiple lines.
+  //https://devhints.io/pug
+  //- <div class="bubble">
+  //-   <span class="bubble__inner">
+  //-     Check it out.<br>
+  //-     I'm making a speech<br>
+  //-     bubble.
+
+  //-     TODO(ricc): add ENV var here.
+  //-   </span>
+  //- </div>
 
   //- ul
   //- each val in [1, 2, 3, 4, 5]

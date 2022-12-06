@@ -24,10 +24,10 @@ build:
 # manifests:
 #   kustomize:
 #     paths: ["deploy/k8s/overlays/dev"]
-deploy:
-  cloudrun:
-    projectid: cicd-platinum-test032
-    region: us-central1
+# deploy:
+#   cloudrun:
+#     projectid: cicd-platinum-test032
+#     region: us-central1
 # no deploy without module..
 # deploy:
 #       kustomize:
@@ -40,12 +40,23 @@ deploy:
 #     - deploy/k8s/*.yaml
 profiles:
   - name: dev
+    #kube-context: gke_cicd-platinum-test031_us-central1_cicd-dev
     manifests:
       kustomize:
         paths: ["deploy/k8s/overlays/dev"]
 
+  - name: cloudrun-test
+    deploy:
+      cloudrun:
+        projectid: cicd-platinum-test032
+        region: us-central1
 
+  # #kube-context:
   - name: prod
+    #activation:
+    #kubectl:
+    deploy:
+      kubeContext: 'gke_cicd-platinum-test031_us-central1_cicd-prod'
     manifests:
       kustomize:
         paths: ["deploy/k8s/overlays/prod"]

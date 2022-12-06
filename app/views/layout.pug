@@ -3,6 +3,10 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    //<link rel="stylesheet" type="text/css" href="css/style.css" />
+    // npm run scss -> sass --watch src/scss/main.scss public/styles/main.css
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    // help the CSS doesnt work, and Im pretty sure its also not calling the JS stuff.
   body
     include includes/header.pug
     block content

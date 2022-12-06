@@ -4,15 +4,10 @@ metadata:
   name: sku-vanilla-app
   labels:
     app: sku-vanilla-app
-# spec:
-#   clusterIP: None
-#   selector:
-#     app: sku-vanilla-app
 spec:
   ports:
   - port: 8080
     protocol: TCP
-  #clusterIP: None
   type: LoadBalancer
   selector:
     app: sku-vanilla-app
