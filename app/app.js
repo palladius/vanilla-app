@@ -15,6 +15,7 @@ var indexRouter = require('./routes/index');
 
 var app = express();
 
+app.use(express.static('public'));
 app.use(express.static(__dirname + '/public'));
 // Assets Riccardo found here https://dev.to/elvelive/setting-up-sass-in-an-express-app-jk4
 app.use('/assets', express.static(path.join(__dirname, '../public')))
