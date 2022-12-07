@@ -16,7 +16,7 @@ spec:
     spec:
       #serviceAccountName: <service_account>
       containers:
-      - image: sku-vanilla-app # vanilla-app
+      - image: sku-vanilla-app-image
 
 # TODO(ricc): remove authentication, I presume its not done here.
 # Changing authentication to allow unauthenticated invocations will assign the 'allUsers' principal type the 'Cloud Run Invoker' IAM role on this Cloud Run service. It will make this service publicly accessible to anyone on the Internet

@@ -20,6 +20,8 @@ spec:
         # DEPLOY_TARGET='Makefile' LAUNCHING_HOSTNAME=`hostname` npm start
         - name: DEPLOY_TARGET
           value: CLOUD_RUN_ASK_WIETSE
+        - name: NODE_ENV
+          value: production
         - name: SPEAKER_NAME
           value: Ron Cloody # Cloud Run
         #- name: LAUNCHING_HOSTNAME
@@ -28,7 +30,7 @@ spec:
           value: useless-since-its-node-js # :)
         - name: OCCASIONAL_MESSAGE
           value: |
-            Let's see if it 🍄 funges.
-            This is something I tested just 30m ago in VanillaApp.
-            Something i learnt is that ACCESS to this is not regualted from this YAML
+            Let's see if it 🍄 funges (Italian for 'works').<br/>
+            This is something I tested just 30m ago in VanillaApp.<br/>
+            Something i learnt is that ACCESS to this is not regualted from this YAML<br/>
             but instead from the IAM permission you give to the runner (or sth similar).

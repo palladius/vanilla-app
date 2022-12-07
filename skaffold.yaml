@@ -1,25 +1,19 @@
+#####################################################################################
 # I want to experiment with a HYDRATED yaml (embedding project ids and such)
 # just to see how it goes across multiple machines. I never do that, I just
 # want to see the experience in my vanilla app.
-#
-
+#####################################################################################
 apiVersion: skaffold/v3 # v2beta29
 kind: Config
 metadata:
   name: vanilla-app-skaffold-configuration # just to make sure you dont confuse it.
-# build:
-#   artifacts:
-#   - image:  vanilla-app
-#     context: app
-#     buildpacks:
-#       builder: gcr.io/buildpacks/builder:v1
-# common build for all
 build:
   artifacts:
     # SKU stands for Skaffold + Kustomize
     - context: app
-      #image: sku-vanilla-app-image
-      image: us-central1-docker.pkg.dev/cicd-platinum-test031/my-skaffold-cornucopia/sku-vanilla-app-image
+      image: sku-vanilla-app-image
+      #image: us-central1-docker.pkg.dev/cicd-platinum-test031/my-skaffold-cornucopia/sku-vanilla-app-image
+      #image: my-skaffold-cornucopia/sku-vanilla-app-image
       buildpacks:
         builder: gcr.io/buildpacks/builder:v1
 profiles:
@@ -36,7 +30,6 @@ profiles:
       kustomize:
         paths: ["deploy/k8s/overlays/dev"]
 
-<<<<<<< HEAD
   ########################################################################
   # $ skaffold dev -p wietse
   # Used to test deployment to Cloud Run
@@ -63,11 +56,6 @@ profiles:
     manifests:
       kustomize:
         paths: ["deploy/k8s/overlays/prod"]
-=======
-  - name: prod
-    manifests:
-      kustomize:
-        paths: ["deploy/k8s/overlays/prod"]
 
 
   # inspired by Christoph https://github.com/cgrotz/blog-examples/blob/main/cloud-deploy-to-cloud-run/skaffold.yaml
@@ -80,5 +68,3 @@ profiles:
         projectid: cicd-platinum-test032
         region: us-central1
         #allow-unauthenticated: true
-
->>>>>>> d707e3a (it works! CloudRun deployed!)
