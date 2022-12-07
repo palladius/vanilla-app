@@ -1,0 +1,25 @@
+# this is me cheekily installing another app :)
+kind: Service
+metadata:
+  name: pastang-on-vanilla-project
+  annotations:
+    #autoscaling.knative.dev/minScale: 1
+    palladi.us/ultimate-answer: 42 # testing custom annotation - it works!
+    palladi.us/github-repo: 'github.com:palladius/pasta'
+    palladi.us/image-source: 'https://hub.docker.com/r/palladius/pastang'
+    palladi.us/random-notes: 'This app should NOT be here.'
+    #run.googleapis.com/ingress-status: all
+spec:
+  template:
+    spec:
+      #serviceAccountName: <service_account>
+      containers:
+      - image: vanilla-app
+        env:
+        - name: RAILS_ENV
+          value: development
+        - name: MESSAGGIO_OCCASIONALE
+          value: |
+            Scrocching attention from VanillaApp. This is my subdle way to
+            try creating an App on CloudRun for free :) since code is elsewhwere:
+            Easy peasy.

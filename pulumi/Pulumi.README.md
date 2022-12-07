@@ -1,21 +1,17 @@
-# PastaNG Pulumization v${outputs.pastang_ricc_version}
+# VanillaApp Pulumization v${outputs.app_version}
 
 Pasta Pulumization version: v**${outputs.pastang_ricc_version}**
 This contains a lot of interesting info from..
 
-## Native Stuff installed
+* hashTest: **${outputs.hashTest}**.
+* hashTest Deeper: **${outputs.hashTest.Author}**. Funge! 🍄
 
-📋 **BigTable**:
-
-* 📋 BigTable InstanceId: **${outputs.native_bigtable_instance_id}** (seems broken).
-* 📋 BigTable Clusters: **${outputs.native_bigtable_instance_clusters}**.
-* 📋 BigTable DevConsole URL: **${outputs.native_bigtable_instances_cconsole_url}**.
+## GCP Resources
 
 🌃 **GKE**:
 
 * 🌃 GKE cluster link: ${outputs.native_gke_cluster_link}
 
-## Classic Stuff installed
 
 🔋 **GCS**:
 
@@ -38,3 +34,9 @@ This contains a lot of interesting info from..
 ## Notes
 
 * to add new dependencies in python, do: `venv/bin/pip install -r requirements.txt` as per [Docs](https://www.pulumi.com/docs/intro/languages/python/).
+
+## Changelog
+
+```bash
+${outputs.app_changelog}
+```

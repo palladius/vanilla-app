@@ -19,6 +19,7 @@ build:
 profiles:
   ########################################################################
   # $ skaffold dev -p dev
+  #
   # Used for development, deploys to a DEV GKE cluster.
   ########################################################################
   - name: dev
@@ -32,7 +33,9 @@ profiles:
 
   ########################################################################
   # $ skaffold dev -p wietse
+  #
   # Used to test deployment to Cloud Run
+  # inspired by Christoph https://github.com/cgrotz/blog-examples/blob/main/cloud-deploy-to-cloud-run/skaffold.yaml
   ########################################################################
   - name: wietse # cloudrun-test
     manifests:
@@ -58,6 +61,7 @@ profiles:
 
   ########################################################################
   # $ skaffold dev -p prod
+  #
   # Used in prod, deploys to a PROD GKE cluster.
   ########################################################################
   - name: prod
@@ -66,15 +70,3 @@ profiles:
     manifests:
       kustomize:
         paths: ["deploy/k8s/overlays/prod"]
-
-
-  # inspired by Christoph https://github.com/cgrotz/blog-examples/blob/main/cloud-deploy-to-cloud-run/skaffold.yaml
-  - name: cloudrun
-    manifests:
-      rawYaml:
-      - deploy/cloudrun/run-service.yaml
-    deploy:
-      cloudrun:
-        projectid: cicd-platinum-test032
-        region: us-central1
-        #allow-unauthenticated: true
