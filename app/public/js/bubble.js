@@ -1,3 +1,5 @@
+// Copied from https://www.humaan.com/blog/creating-comic-book-speech-bubbles-with-svg-and-javascript/
+
 // -------------------------------------------------------
 // Bubble settings
 // -------------------------------------------------------

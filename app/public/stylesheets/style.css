@@ -6,3 +6,10 @@ body {
 a {
   color: #00B7FF;
 }
+
+/* https://www.w3schools.com/howto/howto_css_table_center.asp */
+.bubble-table-possibly-centered {
+    text-align: center;
+    margin-left: auto;
+  margin-right: auto;
+}

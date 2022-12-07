@@ -6,15 +6,3 @@ commonLabels:
   #riccardo-code: 'https://github.com/palladius/vanilla-app'
 resources:
   - vanilla-deployment.yaml # Deployment + Service
-# components:
-#   - ../../../../components/common/base
-
-
-# apiVersion: kustomize.config.k8s.io/v1beta1
-# kind: Kustomization
-# commonLabels:
-#   platinum-app-id: app03
-# resources:
-#   - app03-kunode.yaml # Deployment + Service
-# components:
-#   - ../../../../components/common/base

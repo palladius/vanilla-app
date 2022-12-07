@@ -3,6 +3,7 @@
 This is progress on the overall Vanilla Project (pulumi, skaffold, build, deploy, ...)
 
 ```
+2022-12-06 v0.6 App is mnearly promoted to 1.0. Amazing progress!
 2022-12-06 v0.5 Cloud run works!
 2022-12-04 v0.4 Substantial app work.
 2022-12-04 v0.3 Working on skaffold+kustomize
@@ -15,6 +16,7 @@ This is progress on the overall Vanilla Project (pulumi, skaffold, build, deploy
 This is the progress JUST on the app, conveniently put in a single page.
 
 ```
+2022-12-07 v0.10.1 Some refactoring, brought bubble as full-status citizen as MIXIN and to home page too.
 2022-12-07 v0.10.0 Bubble now works! Thanks cstanger!
 2022-12-06 v0.9.4 Added a /bubble pug where Im experimenting with Js code but so far so no good.
 2022-12-06 v0.9.3 Fixed a vulnerability in PUG w/ `npm audit fix --force`

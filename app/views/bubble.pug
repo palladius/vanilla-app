@@ -9,17 +9,17 @@ block content
   p code: https://jsfiddle.net/paulhumaan/3tjaf0yL/131/
   a(href="https://jsfiddle.net/paulhumaan/3tjaf0yL/131/") 🔗 JSFiddle example
 
-  h2= 'Bubble (ricc says)'
-  p Here is your parametric bubble:
+  h1= 'bubble include'
+  include includes/bubble.pug
+  +bubble-include(occasional_message, speaker_name, bubble_image_src)
 
-  table(border='0', style='valign=center')
-    tr
-      td
-        div#riccardo_id.bubble
-          div.bubble__inner.
-            <b>#{OCCASIONAL_MESSAGE}</b><br/>
-            <i>(#{SPEAKER_NAME})</i>
-    tr
-      td
-        //img(src='./images/ricc-says-movember.jpg', height='300')
-        img(src='./images/ricc-says-indonesia.jpg', height='300')
+  //- table(border='0', style='valign=center')
+  //-   tr
+  //-     td
+  //-       div#riccardo_id.bubble
+  //-         div.bubble__inner.
+  //-           <b>#{occasional_message}</b><br/>
+  //-           <i>(#{speaker_name})</i>
+  //-   tr
+  //-     td
+  //-       img(src=bubble_image_src, height='300')

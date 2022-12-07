@@ -1,5 +1,6 @@
 extends layout
 
+include includes/bubble.pug
 
 block content
   // pug cheatsheet: https://devhints.io/pug
@@ -12,6 +13,10 @@ block content
       tt app/views/index.pug
     span and i cant seem to be able to say appname=
       b  #{app_name}
+
+  h2 Bubble
+  +bubble-include(occasional_message, speaker_name, bubble_image_src)
+
   h2= "ENV vars"
   //p ENV=#{ENV}
   //p OCCASIONAL_MESSAGE=#{OCCASIONAL_MESSAGE}
@@ -46,8 +51,8 @@ block content
     span and
     a(href="https://pugjs.org/language/includes.html") 🔗 Pug Cheatsheet
 
-  // iteration https://pugjs.org/language/iteration.html
+  //- iteration https://pugjs.org/language/iteration.html
 
-  h3= 'Bubble test'
-  p see
-    a(href='/bubble') /bubble
+  //- h3= 'Bubble test'
+  //- p see
+  //-   a(href='/bubble') /bubble

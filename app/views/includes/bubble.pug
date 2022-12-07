@@ -1,0 +1,17 @@
+
+
+mixin bubble-include(occasional_message, speaker_name, bubble_image_src)
+    //- console.log('Including bubble.js verbatim as some crazy person did here: https://github.com/pugjs/pug/blob/master/packages/pug/examples/dynamicscript.pug')
+
+    //- h1 Mixin BubbleInclude
+    //- p occasional_message: #{occasional_message}
+    table(border='0', style='valign=center', class='bubble-table-possibly-centered')
+      tr
+        td
+          div#riccardo_id.bubble
+            div.bubble__inner.
+              <b>#{occasional_message}</b><br/>
+              <i>(#{speaker_name})</i>
+      tr
+        td
+          img(src=bubble_image_src, height='300')
