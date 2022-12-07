@@ -28,6 +28,8 @@ spec:
         #  value: lets see if i can configure it from CLI..
         - name: RAILS_ENV
           value: useless-since-its-node-js # :)
+        - name: LAUNCHING_HOSTNAME
+          value: TOOD(ricc) find way to inject ENV from skaffold..
         - name: OCCASIONAL_MESSAGE
           value: |
             Let's see if it 🍄 funges (Italian for 'works').<br/>
