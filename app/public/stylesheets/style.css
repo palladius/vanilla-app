@@ -21,6 +21,7 @@ span.occasional_message {
   color: brown;
   /* max-width: 500 ; */
   font-family: 'Chalkboard SE', "Comic Sans MS", "Comic Sans",'Comic Neue',  cursive;
+  word-wrap: break-word;
 
 }
 
@@ -30,4 +31,14 @@ span.occasional_message {
     text-align: center;
     margin-left: auto;
   margin-right: auto;
+  word-wrap: break-word;
+
+}
+
+.debug {
+  color: red;
+  border-style: dashed;
+  border-color: coral;
+  border-width: 1px;
+  word-wrap: break-word;
 }

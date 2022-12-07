@@ -1,6 +1,6 @@
 
 
-mixin bubble-include(occasional_message, speaker_name, bubble_image_src)
+mixin bubble-include(occasional_message, speaker_name, bubble_image_src, bubble_debug)
     //- console.log('Including bubble.js verbatim as some crazy person did here: https://github.com/pugjs/pug/blob/master/packages/pug/examples/dynamicscript.pug')
 
     //- h1 Mixin BubbleInclude
@@ -18,8 +18,12 @@ mixin bubble-include(occasional_message, speaker_name, bubble_image_src)
       tr
         td
           img(src=bubble_image_src, height='300')
-    //- p DEBUG: occasional_message on PRE normally and
-    //- pre #{occasional_message}
-    //- p and now:as is https://stackoverflow.com/questions/11191421/rendering-html-in-variable-using-jade
-    //- pre AAA !{occasional_message}" BBB
-    //- p inviisble
+    if bubble_debug
+      p DEBUG: occasional_message on PRE normally and
+      pre.debug #{occasional_message}
+      p and now:as is https://stackoverflow.com/questions/11191421/rendering-html-in-variable-using-jade
+      pre.debug !{occasional_message}"
+      //- else
+    //-   p NO DBEUG we're oin prod or in index..
+    //-   p bubble_debug=#{bubble_debug}
+
