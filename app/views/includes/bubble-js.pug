@@ -2,12 +2,12 @@
 
 console.log('Including bubble.js verbatim as some crazy person did here: https://github.com/pugjs/pug/blob/master/packages/pug/examples/dynamicscript.pug')
 
-h2 REMOVEME
-//p #{bubblejs_filecontent}
-//p bubblejs_filecontent
-// https://stackoverflow.com/questions/5858218/how-can-i-render-inline-javascript-with-jade-pug
-script(type="text/javascript").
-  #{bubblejs_filecontent}
-  //var users = !{JSON.stringify(bubblejs_filecontent).replace(/<\//g, "<\\/")}
+//- h2 REMOVEME
+//- //p #{bubblejs_filecontent}
+//- //p bubblejs_filecontent
+//- // https://stackoverflow.com/questions/5858218/how-can-i-render-inline-javascript-with-jade-pug
+//- script(type="text/javascript").
+//-   #{bubblejs_filecontent}
+//-   //var users = !{JSON.stringify(bubblejs_filecontent).replace(/<\//g, "<\\/")}
 
-script(src='#{bubblejs_filecontent}')
+//- script(src='#{bubblejs_filecontent}')

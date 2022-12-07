@@ -9,37 +9,17 @@ block content
   p code: https://jsfiddle.net/paulhumaan/3tjaf0yL/131/
   a(href="https://jsfiddle.net/paulhumaan/3tjaf0yL/131/") 🔗 JSFiddle example
 
-  p The Js source is loaded by HTNL, I dont know how to make the browser execute it.
-    If I run the code on browser developer console it DOES work :) https://screenshot.googleplex.com/5t2vmCUxWzb3bQx
-
-  h3 Error
-    p bubble.js:8 Uncaught TypeError: Cannot read properties of null (reading 'clientWidth')
-    p at bubble.js:8:13
-    p (anonymous) @ bubble.js:8
-    p DevTools failed to load source map: Could not load content for chrome-extension://plfbhieilacgkdnphcdehdnhjenmnima/jquery.min.map: System error: net::ERR_BLOCKED_BY_CLIENT
-
-  h3= 'Bubble test'
+  h2= 'Bubble (ricc says)'
   p Here is your parametric bubble:
-  //div#riccardo_id.bubble
-    div.bubble__inner.
-        Riccardo says:<br/>
-        <b>#{OCCASIONAL_MESSAGE}</b><br/>
 
-  //img src=ricc-says-movember.jpg
-  //img(src='./images/ricc-says-movember.jpg', height='300')
-  table(border=1, style='valign=center')
+  table(border='0', style='valign=center')
     tr
       td
         div#riccardo_id.bubble
           div.bubble__inner.
-            Riccardo says:<br/>
             <b>#{OCCASIONAL_MESSAGE}</b><br/>
+            <i>(#{SPEAKER_NAME})</i>
     tr
       td
-        img(src='./images/ricc-says-movember.jpg', height='300')
-//-   div.bubble2
-//-     span.bubble__inner2.
-//-       Testing the dot<br/>
-//-       and whatnot.
-//-       with absolute freedome
-//-       over multiple lines.
+        //img(src='./images/ricc-says-movember.jpg', height='300')
+        img(src='./images/ricc-says-indonesia.jpg', height='300')

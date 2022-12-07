@@ -65,8 +65,8 @@ b_path += ' ' + b_node2_handleIn_x + ',' + b_node2_handleIn_y; // Cubic bezier n
 b_path += ' ' + b_node2_x + ',' + b_node2_y; // Cubic bezier node2 X,Y coordinate
 
 // Draw the second curve to node 3 - Continuing the curve does not require the OUT handle
-b_path += 'S' + b_node3_handleIn_x + ',' + b_node3_handleIn_y; // Cubic bezier node 3 IN handle X,Y coordinate
-b_path += ' ' + b_node3_x + ',' + b_node3_y + ' '; // Cubic bezier node 3 X,Y coordinate
+b_path += 'S' + b_node3_handleIn_x + ',' + (b_node3_handleIn_y) ; // Cubic bezier node 3 IN handle X,Y coordinate
+b_path += ' ' + b_node3_x + ',' + (b_node3_y) + ' '; // Cubic bezier node 3 X,Y coordinate
 
 // Draw the third curve to node 4 - Continuing the curve does not require the OUT handle
 b_path += 'S' + b_node4_handleIn_x + ',' + b_node4_handleIn_y; // Cubic bezier node 4 IN handle X,Y coordinate

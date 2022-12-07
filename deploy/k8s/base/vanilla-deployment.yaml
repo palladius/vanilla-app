@@ -35,3 +35,5 @@ spec:
         env:
         - name: APP_NAME
           value: A Wonderful App in NodeJS + Express
+        - name: SPEAKER_NAME
+          value: Guy K. Enderson # GKE

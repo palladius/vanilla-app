@@ -15,6 +15,7 @@ This is progress on the overall Vanilla Project (pulumi, skaffold, build, deploy
 This is the progress JUST on the app, conveniently put in a single page.
 
 ```
+2022-12-07 v0.10.0 Bubble now works! Thanks cstanger!
 2022-12-06 v0.9.4 Added a /bubble pug where Im experimenting with Js code but so far so no good.
 2022-12-06 v0.9.3 Fixed a vulnerability in PUG w/ `npm audit fix --force`
 2022-12-06 v0.9.2 Added SASS for comicbook feature.

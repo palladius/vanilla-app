@@ -71,6 +71,7 @@ router.get('/bubble', function(req, res, next) {
     app_version: version_buffer,
     node_env: process.env.NODE_ENV,
     OCCASIONAL_MESSAGE: process.env.OCCASIONAL_MESSAGE,
+    SPEAKER_NAME: process.env.SPEAKER_NAME, // or Riccardo
     bubblejs_filecontent: bubblejs_filecontent,
   });
 });

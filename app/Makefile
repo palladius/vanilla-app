@@ -6,4 +6,4 @@ install:
 
 run:
 	npm run scss-riccardo-once
-	DEBUG=myapp:* OCCASIONAL_MESSAGE='Running in debug from Makefile' DEPLOY_TARGET='Makefile' LAUNCHING_HOSTNAME=`hostname` npm start
+	DEBUG=myapp:* OCCASIONAL_MESSAGE='Running in debug from Makefile and Pulumi' DEPLOY_TARGET='Makefile' SPEAKER_NAME='Riccardo MacFile' LAUNCHING_HOSTNAME=`hostname` npm start
