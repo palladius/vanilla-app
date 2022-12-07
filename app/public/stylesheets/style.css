@@ -7,6 +7,24 @@ a {
   color: #00B7FF;
 }
 
+/* Riccardo: otherwise a very LONG comic book will debordate from window */
+div {
+
+  /*
+  max-width: 500px ;
+  display: block;
+  */
+
+}
+
+span.occasional_message {
+  color: brown;
+  /* max-width: 500 ; */
+  font-family: 'Chalkboard SE', "Comic Sans MS", "Comic Sans",'Comic Neue',  cursive;
+
+}
+
+
 /* https://www.w3schools.com/howto/howto_css_table_center.asp */
 .bubble-table-possibly-centered {
     text-align: center;

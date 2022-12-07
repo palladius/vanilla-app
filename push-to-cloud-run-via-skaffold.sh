@@ -7,6 +7,7 @@
 echo "Building image in $SKAFFOLD_DEFAULT_REPO_FOR_CLOUDRUN and then Deploying to Cloud Run :)"
 skaffold run -p wietse --default-repo $SKAFFOLD_DEFAULT_REPO_FOR_CLOUDRUN
 
+# making it PUBLICLY available. too beautiful to stay secret here!
 gcloud run services add-iam-policy-binding sku-vanilla-app \
     --region "$SKAFFOLD_CLOUD_REGION" \
     --member="allUsers" \

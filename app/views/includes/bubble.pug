@@ -12,8 +12,14 @@ mixin bubble-include(occasional_message, speaker_name, bubble_image_src)
         td
           div#riccardo_id.bubble
             div.bubble__inner.
-              <b>#{occasional_message}</b><br/>
-              <i>(#{speaker_name})</i>
+              <span class='occasional_message'><b>!{occasional_message}</b><br/>
+              <i>-- #{speaker_name}</i>
+              </span>
       tr
         td
           img(src=bubble_image_src, height='300')
+    //- p DEBUG: occasional_message on PRE normally and
+    //- pre #{occasional_message}
+    //- p and now:as is https://stackoverflow.com/questions/11191421/rendering-html-in-variable-using-jade
+    //- pre AAA !{occasional_message}" BBB
+    //- p inviisble

@@ -28,6 +28,11 @@ const listOfEnvVars = [
 process.env.LONGHOSTNAME_MANHOUSE = require('os').hostname()
 process.env.HOSTNAME = process.env.LONGHOSTNAME_MANHOUSE.split('.')[0]
 
+occasional_message = process.env.OCCASIONAL_MESSAGE || '😞_MISSING_OCCASIONAL_MESSAGE_😞';
+// breaks every 80 chars - but potentially can break a word in two :(
+// TODO() split every N blank chars
+occasional_message_with_newlines = '🗯️ ' + occasional_message.match(/.{1,80}/g).join("<br/>");
+
 
 
 /* GET home page. */
@@ -42,7 +47,7 @@ router.get('/', function(req, res, next) {
     deploy_target: process.env.DEPLOY_TARGET,
     hostname: require('os').hostname(),
     listOfEnvVars: listOfEnvVars,
-    occasional_message: process.env.OCCASIONAL_MESSAGE || '😞_MISSING_OCCASIONAL_MESSAGE_😞',
+    occasional_message: occasional_message_with_newlines,
     speaker_name: process.env.SPEAKER_NAME  || 'Riccardo', // or Riccardo
     bubble_image_src: process.env.BUBBLE_IMAGE_SRC || './images/ricc-says-indonesia.jpg',
     bubblejs_filecontent: bubblejs_filecontent,
@@ -75,7 +80,7 @@ router.get('/bubble', function(req, res, next) {
     deploy_target: process.env.DEPLOY_TARGET,
     app_version: version_buffer,
     node_env: process.env.NODE_ENV,
-    occasional_message: process.env.OCCASIONAL_MESSAGE || '😞_MISSING_OCCASIONAL_MESSAGE_😞',
+    occasional_message: occasional_message_with_newlines,
     speaker_name: process.env.SPEAKER_NAME  || 'Riccardo', // or Riccardo
     bubble_image_src: process.env.BUBBLE_IMAGE_SRC || './images/ricc-says-indonesia.jpg',
     bubblejs_filecontent: bubblejs_filecontent,
