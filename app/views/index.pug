@@ -5,16 +5,20 @@ include includes/bubble.pug
 block content
   // pug cheatsheet: https://devhints.io/pug
   h1= title
-  h2 #{app_name} #{title} 😏
+  //- h2 #{app_name} #{title} 😏
+  h2 #{app_name} 😏
   //.h3= `${app_name} ${title} 😏 - with backquotes IT WORKS!`
 
   p Welcome to #{title}.
-    span 'This code is in here: '
-      tt app/views/index.pug
-    span and i cant seem to be able to say appname=
-      b  #{app_name}
+    //- span 'This code is in here: '
+    //-   tt app/views/index.pug
+    //- span and i cant seem to be able to say appname=
+    //-   b  #{app_name}
 
   h2 Bubble
+  p I dreamed about showing you a generic bubble loading text from ENV and calling it
+    tt ricc_says
+    span for the last 2 years. Now this dream is finally reality
   +bubble-include(occasional_message, speaker_name, bubble_image_src, 0)
 
   h2= "ENV vars"

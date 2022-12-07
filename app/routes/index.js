@@ -33,6 +33,8 @@ occasional_message = process.env.OCCASIONAL_MESSAGE || '😞_MISSING_OCCASIONAL_
 // TODO() split every N blank chars
 occasional_message_with_newlines = '🗯️ ' + occasional_message.match(/.{1,80}/g).join("<br/>");
 
+//DEFAULT_BUBBLE_IMAGE = './images/ricc-says-indonesia.jpg'
+DEFAULT_BUBBLE_IMAGE = './images/ricc-says-weirdface.jpg'
 
 
 /* GET home page. */
@@ -49,7 +51,7 @@ router.get('/', function(req, res, next) {
     listOfEnvVars: listOfEnvVars,
     occasional_message: occasional_message_with_newlines,
     speaker_name: process.env.SPEAKER_NAME  || 'Riccardo', // or Riccardo
-    bubble_image_src: process.env.BUBBLE_IMAGE_SRC || './images/ricc-says-indonesia.jpg',
+    bubble_image_src: process.env.BUBBLE_IMAGE_SRC || DEFAULT_BUBBLE_IMAGE,
     bubblejs_filecontent: bubblejs_filecontent,
     // JAVA: InetAddress.getLocalHost().getHostName()
 //, //     location.hostname,
@@ -82,7 +84,7 @@ router.get('/bubble', function(req, res, next) {
     node_env: process.env.NODE_ENV,
     occasional_message: occasional_message_with_newlines,
     speaker_name: process.env.SPEAKER_NAME  || 'Riccardo', // or Riccardo
-    bubble_image_src: process.env.BUBBLE_IMAGE_SRC || './images/ricc-says-indonesia.jpg',
+    bubble_image_src: process.env.BUBBLE_IMAGE_SRC || DEFAULT_BUBBLE_IMAGE,
     bubblejs_filecontent: bubblejs_filecontent,
   });
 });

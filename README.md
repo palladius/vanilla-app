@@ -8,6 +8,13 @@ self: go/ricc-vanilla
 
 * app/ helloworld in node.js with `expressjs`
 
+### TODO comic book
+
+Some further ideas:
+
+* Also try this cartoon which is even awesomer: https://codepen.io/alvaromontoro/pen/zYqzgoy
+* Also this is amazing: https://codepen.io/chris22smith/pen/MyBBOe (impressive)
+
 ## thanks
 
 Thanks to:

@@ -2,7 +2,7 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  name: sku-vanilla-app
+  name: sku-vanilla-app-on-prime
   annotations:
     palladi.us/ultimate-answer: 42 # testing custom annotation - it works!
     palladi.us/github-repo: 'github.com:palladius/vanilla-app'

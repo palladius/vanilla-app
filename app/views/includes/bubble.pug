@@ -16,7 +16,7 @@ mixin bubble-include(occasional_message, speaker_name, bubble_image_src, bubble_
               <i>-- #{speaker_name}</i>
               </span>
       tr
-        td
+        td.cell_right
           img(src=bubble_image_src, height='300')
     if bubble_debug
       p DEBUG: occasional_message on PRE normally and

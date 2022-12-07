@@ -35,6 +35,11 @@ span.occasional_message {
 
 }
 
+.cell_right {
+  text-align: right;
+
+}
+
 .debug {
   color: red;
   border-style: dashed;

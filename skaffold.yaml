@@ -44,7 +44,17 @@ profiles:
         # TODO(pulumi): enable Cloud Run API here.
         projectid: cicd-platinum-test031
         region: asia-southeast2 # I love Jakarta even though i dont like Java :)
+        #region: "{{.SKAFFOLD_CLOUD_REGION}}" # doesnt work.
         # name is not here... but in the YAML.
+    verify:
+      # curl /statusz | grep
+      - name: verify-endpoint-test
+        container:
+          name: alpine
+          image: alpine
+          command: ["/bin/sh"]
+          #args: ["-c", "wget $ENDPOINT_URL/statusz | grep app_version= | grep deploy_target=CloudRun"]
+          args: ["-c", "wget $CLOUD_RUN_LOCATION/statusz"] # CLOUD_RUN_LOCATION
 
   ########################################################################
   # $ skaffold dev -p prod
