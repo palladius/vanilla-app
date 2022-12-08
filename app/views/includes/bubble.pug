@@ -12,8 +12,9 @@ mixin bubble-include(occasional_message, speaker_name, bubble_image_src, bubble_
         td
           div#riccardo_id.bubble
             div.bubble__inner.
-              <span class='occasional_message'><b>!{occasional_message}</b><br/>
-              <i>-- #{speaker_name}</i>
+              <span class='occasional_message'> “<b>!{occasional_message}</b>”
+              <!-- <br/> -->
+              <i>- #{speaker_name}</i>
               </span>
       tr
         td.cell_right

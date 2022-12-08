@@ -23,7 +23,7 @@ spec:
         - name: NODE_ENV
           value: production
         - name: SPEAKER_NAME
-          value: Ron Cloody # Cloud Run
+          value: Ronald Rook # Ron Cloody # Cloud Run
         #- name: LAUNCHING_HOSTNAME
         #  value: lets see if i can configure it from CLI..
         - name: RAILS_ENV
@@ -31,8 +31,12 @@ spec:
         - name: LAUNCHING_HOSTNAME
           value: TOOD(ricc) find way to inject ENV from skaffold..
         - name: OCCASIONAL_MESSAGE
+          # running quotes: https://parade.com/1157722/michellehaag/running-quotes/#:~:text=You%20can%20say%2C%20'I%20have,into%20it.%E2%80%9D%20%E2%80%94%20Oprah%20Winfrey
+            # Let's see if it 🍄 funges (Italian for 'works').<br/>
+            # This is something I tested just 30m ago in VanillaApp.<br/>
+            # Something i learnt is that ACCESS to this is not regulated from this YAML<br/>
+            # but instead from the IAM permission you give to the runner (or sth similar).
           value: |
-            Let's see if it 🍄 funges (Italian for 'works').<br/>
-            This is something I tested just 30m ago in VanillaApp.<br/>
-            Something i learnt is that ACCESS to this is not regulated from this YAML<br/>
-            but instead from the IAM permission you give to the runner (or sth similar).
+            “I don’t run to add days to my life, I run to add life to my days.”
+
+

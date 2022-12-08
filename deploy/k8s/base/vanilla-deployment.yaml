@@ -37,3 +37,14 @@ spec:
           value: A Wonderful App in NodeJS + Express
         - name: SPEAKER_NAME
           value: Guy K. Enderson # GKE
+        - name: OCCASIONAL_MESSAGE
+          value: |
+            Nobody will remember:<br/>
+            - Your salary<br/>
+            - Your fancy title<br/>
+            - How 'busy' you were<br/>
+            - How stressed you were<br/>
+            - How many hours you worked<br/>
+            <br/>
+            People will remember:<br/>
+            - Your commit that cause a production issue<br/>

@@ -51,7 +51,7 @@ profiles:
         # name is not here... but in the YAML.
     verify:
       # curl /statusz | grep
-      - name: verify-endpoint-test
+      - name: 03-verify-endpoint-test
         container:
           name: alpine
           image: alpine

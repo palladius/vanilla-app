@@ -13,7 +13,7 @@ self: go/ricc-vanilla
 Some further ideas:
 
 * Also try this cartoon which is even awesomer: https://codepen.io/alvaromontoro/pen/zYqzgoy
-* Also this is amazing: https://codepen.io/chris22smith/pen/MyBBOe (impressive)
+* Also this is amazing: https://codepen.io/chris22smith/pen/MyBBOe (impressive) https://screenshot.googleplex.com/9cvnfhBQNrConp9
 
 ## thanks
 
