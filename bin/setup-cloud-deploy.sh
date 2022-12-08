@@ -17,6 +17,8 @@ gcloud beta deploy apply --file=tmp/clouddeploy.yaml \
                          --region=$GOOGLE_REGION \
                          --project=$PROJECT_ID
 
+# ideas for release from Christoph: https://medium.com/google-cloud/deploy-to-cloud-run-from-cloud-deploy-4f83628cf045
+
 # gcloud beta deploy releases create test-release-001 \
 #   --project=$PROJECT_ID \
 #   --region=$GOOGLE_REGION \

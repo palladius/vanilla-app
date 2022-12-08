@@ -41,10 +41,7 @@ kind: Target
 metadata:
  name: production
 description:  |
-  04 production cluster (external, as stable as it can be).
-  Used for Traffic Splitting to bedew 10% of Traffic into
-  this canary (while 90% goes to canary) for some time before
-  promoting all traffic to prod.
+  02 production cluster and production ENV vars.
 gke:
  cluster: projects/MY_PROJECT_ID/locations/MY_REGION/clusters/cicd-prod
 
@@ -54,7 +51,7 @@ kind: Target
 metadata:
  name: cloudrun
 description:  |
-  Not sure if deploy should be before or after prod, and honestly its not
+  03 Not sure if deploy should be before or after prod, and honestly its not
   so important now
 # from: https://github.com/cgrotz/blog-examples/blob/main/cloud-deploy-to-cloud-run/clouddeploy.yaml
 run:
