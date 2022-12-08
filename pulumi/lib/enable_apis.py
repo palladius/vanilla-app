@@ -1,9 +1,9 @@
 import pulumi_gcp as gcp
 
 
-
 APIS_TO_BE_ENABLED = [
-    'iam',
+    'artifactregistry',
+    'iam', #uhm seems wrong..
     'cloudbuild',
     'clouddeploy',
     'run',
