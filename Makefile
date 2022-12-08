@@ -53,3 +53,6 @@ deploy-to-cloudrun: skaffold-deploy-to-cloudrun
 skaffold-deploy-to-prod:
 	skaffold run -p prod --default-repo $(MAKEFILE_REPO)
 deploy-to-prod: skaffold-deploy-to-prod
+
+cloud-deploy-setup:
+	bin/setup-cloud-deploy.sh

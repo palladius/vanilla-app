@@ -14,6 +14,10 @@ spec:
       #serviceAccountName: <service_account>
       containers:
       - image: sku-vanilla-app-image
+        resources: # found this here: https://codelabs.developers.google.com/cloud-run-app-deployment-with-cloud-deploy#2
+          limits:
+            cpu: 1000m
+            memory: 128Mi
         env:
         # DEBUG=myapp:*
         # OCCASIONAL_MESSAGE='Running in debug from Makefile'

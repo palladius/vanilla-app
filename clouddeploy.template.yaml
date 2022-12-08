@@ -1,0 +1,67 @@
+#############################################################################################
+# This is a template where a bin script will change these two variables:
+# * MY_PROJECT_ID (GCP Project Id)
+# * MY_REGION (GCP Region)
+# Template hydrated on: MY_DATETIME
+#############################################################################################
+
+apiVersion: deploy.cloud.google.com/v1
+kind: DeliveryPipeline
+metadata:
+  name: vanilla-app
+  annotations:
+    about: This is my VanillaApp built thru buildpacks
+  labels:
+    lang: nodejs
+    ricc_app_id: '02'
+    author_username: ricc
+    github_repo_user: palladius
+    github_repo_name: vanilla-app
+description: |
+  Delivery pipeline for CI CD VanillaApp.
+serialPipeline:
+ stages:
+ - targetId: dev
+   profiles: [dev]
+ - targetId: production
+   profiles: [production]
+ - targetId: cloudrun
+   profiles: [cloudrun]
+---
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+ name: dev
+description: 01 Development cluster (internal, autopush, possibly verification)
+gke:
+ cluster: projects/MY_PROJECT_ID/locations/MY_REGION/clusters/cicd-dev
+---
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+ name: production
+description:  |
+  04 production cluster (external, as stable as it can be).
+  Used for Traffic Splitting to bedew 10% of Traffic into
+  this canary (while 90% goes to canary) for some time before
+  promoting all traffic to prod.
+gke:
+ cluster: projects/MY_PROJECT_ID/locations/MY_REGION/clusters/cicd-prod
+
+---
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+ name: cloudrun
+description:  |
+  Not sure if deploy should be before or after prod, and honestly its not
+  so important now
+# from: https://github.com/cgrotz/blog-examples/blob/main/cloud-deploy-to-cloud-run/clouddeploy.yaml
+run:
+ location: projects/MY_PROJECT_ID/locations/MY_REGION
+#executionConfigs:
+# - defaultPool:
+#     serviceAccount: <DEPLOYER_SA_EMAIL>
+#   usages:
+#   - RENDER
+#   - DEPLOY
