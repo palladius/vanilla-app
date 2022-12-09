@@ -23,9 +23,10 @@ profiles:
   # Used for development, deploys to a DEV GKE cluster.
   ########################################################################
   - name: dev
-    deploy:
       # TODO(create with pulumi)
       # gcloud container clusters get-credentials cicd-canary --region us-central1 --project cicd-platinum-test031
+      # gcloud container clusters get-credentials cicd-dev --region us-central1 --project cicd-platinum-test031
+    deploy:
       kubeContext: 'gke_cicd-platinum-test031_us-central1_cicd-dev'
     manifests:
       kustomize:

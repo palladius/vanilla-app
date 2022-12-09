@@ -8,6 +8,12 @@ self: go/ricc-vanilla
 
 * app/ helloworld in node.js with `expressjs`
 
+How to deploy:
+
+* `skaffold run -p wietse [--tail]` Deploy to Cloud Run (with or without logs on your shell)
+* `./skaffold-dev-wrapper.sh dev` Deploy to DEV cluster, in dev loop
+* `./skaffold-prod-wrapper.sh run` Deploy to Prod cluster ONCE (prod namespace, prod ENV vars... as prod as it gets!)
+
 ### TODO comic book
 
 Some further ideas:

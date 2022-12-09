@@ -3,7 +3,8 @@
 This is progress on the overall Vanilla Project (pulumi, skaffold, build, deploy, ...)
 
 ```
-2022-12-06 v0.7 Cloud Deploy configured. Now we just need Cloud Build to make this shine :)
+2022-12-09 v0.8 Finally fixed skaffold and manifests (thanks Alex)
+2022-12-08 v0.7 Cloud Deploy configured. Now we just need Cloud Build to make this shine :)
 2022-12-06 v0.6 App is mnearly promoted to 1.0. Amazing progress!
 2022-12-06 v0.5 Cloud run works!
 2022-12-04 v0.4 Substantial app work.

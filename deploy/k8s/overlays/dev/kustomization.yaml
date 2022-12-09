@@ -1,24 +1,13 @@
+#####################################################
+# DEV: Add two ENV for Cloud Deploy :)
+#####################################################
+# inspired by https://github.com/palladius/clouddeploy-platinum-path/blob/main/apps/app03/k8s/overlays/dev/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: vanilla-dev
 resources:
   - ../../base
   - namespace.yaml
-#components:
-#  - ../../../../../components/common/dev
-
-
-
-
-# inspired by https://github.com/palladius/clouddeploy-platinum-path/blob/main/apps/app03/k8s/overlays/dev/kustomization.yaml
-
-#####################################################
-# DEV: Add two ENV for Cloud Deploy :)
-#####################################################
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-  - ../../base
 # replicas:
 #   - name: sku-vanilla-app
 #     # In prod we need more capacity :)
