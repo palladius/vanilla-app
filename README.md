@@ -10,7 +10,9 @@ self: go/ricc-vanilla
 
 How to deploy:
 
-* `skaffold run -p wietse [--tail]` Deploy to Cloud Run (with or without logs on your shell)
+* `skaffold run -p wietse [--tail]` Deploy to Cloud Run (with or without logs on your shell). WARNING - everytime I call
+  it I noticed that I lose the "open to everyone part" so consider calling the `push-to-cloud-run-via-skaffold.sh` script
+  instead which has the logic built in. See b/0001 in `BUGS`
 * `./skaffold-dev-wrapper.sh dev` Deploy to DEV cluster, in dev loop
 * `./skaffold-prod-wrapper.sh run` Deploy to Prod cluster ONCE (prod namespace, prod ENV vars... as prod as it gets!)
 

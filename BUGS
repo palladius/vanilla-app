@@ -1,0 +1,10 @@
+# b/0001 everytime I use skaffold to deploy to Cloud Run I lose the `allUsers` invoker part
+
+It seems that every time I call the `skaffold run -p wietse` it gets reset.
+Also it looks like I lose track of revisions. It seems to me that Cloud Run
+deployer from Skaffold DELETES and RECREATES the endpoint all the time.
+
+I wonder if it would be possible to just keep the same endpoint (if it exists) and add a revision to it.
+Not sure if it is even possible, but it would definitely provide a better experience.
+
+See my ~5th deployment: https://screenshot.googleplex.com/4YmZAS2w9LvPc8Q it seems like the first.

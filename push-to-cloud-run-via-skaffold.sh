@@ -7,8 +7,8 @@
 
 direnv allow .
 
-echo "Building image in $SKAFFOLD_DEFAULT_REPO_FOR_CLOUDRUN and then Deploying to Cloud Run :)"
-skaffold run -p wietse --default-repo "$SKAFFOLD_DEFAULT_REPO_FOR_CLOUDRUN"
+echo "Building image in $SKAFFOLD_DEFAULT_REPO and then Deploying to Cloud Run :)"
+skaffold run -p wietse # --default-repo "$SKAFFOLD_DEFAULT_REPO_FOR_CLOUDRUN"
 
 # making it PUBLICLY available. too beautiful to stay secret here!
 gcloud run services add-iam-policy-binding \
@@ -17,4 +17,4 @@ gcloud run services add-iam-policy-binding \
     --member="allUsers" \
     --role="roles/run.invoker"
 
-echo 'Done. Pushed to ⏯️ Cloud Run and opened to everyone.'
+echo 'Done. ⏯️ Pushed to Cloud Run and opened to everyone.'
