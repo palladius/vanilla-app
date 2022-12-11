@@ -3,6 +3,7 @@
 This is progress on the overall Vanilla Project (pulumi, skaffold, build, deploy, ...)
 
 ```
+2022-12-11 v0.9 just back from Mulhouse. Testing hooks on skaffold: https://skaffold.dev/docs/pipeline-stages/lifecycle-hooks/
 2022-12-09 v0.8 Finally fixed skaffold and manifests (thanks Alex)
 2022-12-08 v0.7 Cloud Deploy configured. Now we just need Cloud Build to make this shine :)
 2022-12-06 v0.6 App is mnearly promoted to 1.0. Amazing progress!

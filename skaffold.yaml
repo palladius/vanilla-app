@@ -43,13 +43,27 @@ profiles:
       rawYaml:
       - deploy/cloudrun/*.yaml
     deploy:
-      #kube-context: gke_cicd-platinum-test031_us-central1_cicd-dev
       cloudrun:
         # TODO(pulumi): enable Cloud Run API here.
         projectid: cicd-platinum-test031
         region: asia-southeast2 # I love Jakarta even though i dont like Java :)
         #region: "{{.SKAFFOLD_CLOUD_REGION}}" # doesnt work.
         # name is not here... but in the YAML.
+        # CloudRun doesnt seem to support hooks: gives me error
+        #hooks:
+        #   before:
+        #    - host:
+        #       command:
+        #       - 'echo I execute this BEFORE deploying. See https://skaffold.dev/docs/pipeline-stages/lifecycle-hooks/'
+        #       os: [darwin, linux]
+      # https://skaffold.dev/docs/pipeline-stages/lifecycle-hooks/
+      # kubectl:
+      #   hooks:
+      #     before:
+      #       host:
+      #         # also os, dir: https://skaffold.dev/docs/references/yaml/?version=v3
+      #         command: [ 'touch .skaffold.pre-deploy-to-cloud-run-v$(cat VERSION).touch']
+                #TODO ADD: - gcloud run services add-iam-policy-binding \ #   'sku-vanilla-app-on-prime' \ #   --region "$SKAFFOLD_CLOUD_REGION" \ #   --member="allUsers" \ #   --role="roles/run.invoker"
     verify:
       # curl /statusz | grep
       - name: 03-verify-endpoint-test
@@ -64,10 +78,32 @@ profiles:
   # $ skaffold dev -p prod
   #
   # Used in prod, deploys to a PROD GKE cluster.
+  # AS of v0.9, testing hooks: https://skaffold.dev/docs/pipeline-stages/lifecycle-hooks/
   ########################################################################
   - name: prod
     deploy:
       kubeContext: 'gke_cicd-platinum-test031_us-central1_cicd-prod'
+      kubectl:
+        hooks:
+          before:
+           - host:
+              command:
+              - 'echo I execute this BEFORE deploying. See https://skaffold.dev/docs/pipeline-stages/lifecycle-hooks/'
+              os: [darwin, linux]
+          after:
+          - host:
+              command: ["sh", "-c", "echo post-deploy host hook running on $(hostname)!"]
+              os: [darwin, linux]
+
     manifests:
       kustomize:
         paths: ["deploy/k8s/overlays/prod"]
+      #         # also os, dir: https://skaffold.dev/docs/references/yaml/?version=v3
+      #         command: [ 'touch .skaffold.pre-deploy-to-cloud-run-v$(cat VERSION).touch']
+
+  - name: local
+    deploy:
+      kubeContext: minikube
+    manifests:
+      kustomize:
+        paths: ["deploy/k8s/overlays/dev"]
