@@ -89,6 +89,7 @@ profiles:
            - host:
               command:
               - 'echo I execute this BEFORE deploying. See https://skaffold.dev/docs/pipeline-stages/lifecycle-hooks/'
+              - 'bin/suocera.sh' # just outsputs all VARS from https://skaffold.dev/docs/pipeline-stages/lifecycle-hooks/ ENV Vars TODO
               os: [darwin, linux]
           after:
           - host:
@@ -101,9 +102,21 @@ profiles:
       #         # also os, dir: https://skaffold.dev/docs/references/yaml/?version=v3
       #         command: [ 'touch .skaffold.pre-deploy-to-cloud-run-v$(cat VERSION).touch']
 
+  ########################################################################
+  # $ skaffold dev -p local
+  #
+  # Just testing locally for improved VELOCITY to try out new Port Forwardings for instance.
+  # minikube howto: https://skaffold.dev/docs/quickstart/
+  # inspired by https://github.com/GoogleContainerTools/skaffold/blob/main/examples/getting-started/skaffold.yaml
+  ########################################################################
   - name: local
     deploy:
       kubeContext: minikube
     manifests:
-      kustomize:
-        paths: ["deploy/k8s/overlays/dev"]
+      rawYaml:
+      - 'deploy/k8s/minikube/k8s-pod.yaml'
+    build:
+      local:
+        concurrency: 1
+        tryImportMissing: false
+        useDockerCLI: false

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sku-vanilla-app
+spec:
+  containers:
+  - name: sku-vanilla-app
+    image: sku-vanilla-app-image
+
+      # env:
+      # - name: APP_NAME
+      #   value: A Wonderful App in NodeJS + Express on Minikube
