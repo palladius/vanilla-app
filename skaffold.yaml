@@ -88,7 +88,7 @@ profiles:
           before:
            - host:
               command:
-              - 'echo I execute this BEFORE deploying. See https://skaffold.dev/docs/pipeline-stages/lifecycle-hooks/'
+              - echo I execute this BEFORE deploying. See https://skaffold.dev/docs/pipeline-stages/lifecycle-hooks/
               - 'bin/suocera.sh' # just outsputs all VARS from https://skaffold.dev/docs/pipeline-stages/lifecycle-hooks/ ENV Vars TODO
               os: [darwin, linux]
           after:

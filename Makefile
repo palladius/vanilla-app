@@ -57,3 +57,8 @@ deploy-to-prod: skaffold-deploy-to-prod
 
 cloud-deploy-setup:
 	bin/setup-cloud-deploy.sh
+
+
+# simpler:
+dev: skaffold-dev-in-dev
+prod: skaffold-deploy-to-prod
