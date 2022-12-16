@@ -3,13 +3,9 @@ extends layout
 
 block content
   // pug cheatsheet: https://devhints.io/pug
-  h1= title
-  p Bubble example. Copied from this article and this code.
-  p Article: https://www.humaan.com/blog/creating-comic-book-speech-bubbles-with-svg-and-javascript/
-  p code: https://jsfiddle.net/paulhumaan/3tjaf0yL/131/
-  a(href="https://jsfiddle.net/paulhumaan/3tjaf0yL/131/") 🔗 JSFiddle example
+  //h1= title
 
-  h1= 'bubble include'
+  //h1= 'bubble include'
   include includes/bubble.pug
-  +bubble-include(occasional_message, speaker_name, bubble_image_src, 1)
+  +bubble-include(occasional_message, speaker_name, bubble_image_src, 0)
 

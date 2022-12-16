@@ -19,6 +19,7 @@ This is progress on the overall Vanilla Project (pulumi, skaffold, build, deploy
 This is the progress JUST on the app, conveniently put in a single page.
 
 ```
+2022-12-16 v0.13.4 Cleaned up /bubble, moved /statusz to /statuszee.
 2022-12-07 v0.10.3 Adding confucius. Cleaning up some MESSAGE files as theyre pretty ugly.
 2022-12-07 v0.10.2 Fixing long messages on Cloud Run :) working here: https://sku-vanilla-app-habj6glk4a-et.a.run.app/
 2022-12-07 v0.10.1 Some refactoring, brought bubble as full-status citizen as MIXIN and to home page too.

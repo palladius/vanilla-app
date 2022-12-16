@@ -1,3 +1,4 @@
+
 var express = require('express');
 var router = express.Router();
 
@@ -19,6 +20,7 @@ const listOfEnvVars = [
   "OCCASIONAL_MESSAGE", "DEPLOY_TARGET", "TEST_DB_PASS",
   "HOSTNAME", "LAUNCHING_HOSTNAME", "LONGHOSTNAME_MANHOUSE",
   "NODE_ENV",
+  "HELLO", // comes from project.toml, you never know its useful someday
   "USER", "PORT", "MY_SECRET_KEY",
   'CLOUDSDK_CORE_PROJECT', // comed from .envrc
   //'EDITOR','GOOGLE_KEY',
@@ -68,11 +70,10 @@ router.get('/status', function(req, res, next) {
   });
 });
 
-/* GET short STATUSZ listing. */
-router.get('/statusz', function(req, res, next) {
-  const statusz = `app_name=${app_name} app_version=${version_buffer} node_env=${process.env.NODE_ENV} deploy_target=${deploy_target}`
-  res.send(statusz);
-//  res.send('respond with a resource');
+/* GET short STATUSZ listing. /statuszee since /statusz is taken */
+router.get('/statuszee', function(req, res, next) {
+  const statuszee = `app_name=${app_name} app_version=${version_buffer} node_env=${process.env.NODE_ENV} deploy_target=${deploy_target}`
+  res.send(statuszee);
 });
 
 router.get('/bubble', function(req, res, next) {
