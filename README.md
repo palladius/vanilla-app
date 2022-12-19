@@ -1,4 +1,4 @@
-# vanilla-app
+# 🍦 Vanilla App
 
 My first vanilla App done with skaffold and done WELL.
 

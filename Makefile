@@ -39,6 +39,7 @@ skaffold-config:
 	kubectl config current-context
 	kubectl config get-contexts
 	skaffold config list --all
+	echo ✓ DONE. 💾
 
 push-to-cloudrun:
 	skaffold run -p wietse
@@ -57,6 +58,12 @@ deploy-to-prod: skaffold-deploy-to-prod
 
 cloud-deploy-setup:
 	bin/setup-cloud-deploy.sh
+
+kind-create-clusters:
+	kind create cluster -n ricc-dev
+	kind create cluster -n ricc-prod
+	kubectl cluster-info --context kind-ricc-dev
+	kubectl cluster-info --context kind-ricc-prod
 
 
 # simpler:
