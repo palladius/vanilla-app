@@ -1,0 +1,10 @@
+
+#GKE clusters in vulcanina:
+# * dev	        us-central1-c	(zone)
+# * prodcluster	us-central1	  (region)
+config:
+  gcp:project: vulcanina
+  gcp:region: us-central1
+  # This needs to be existing already or it will fail. Not sure this is a good idea, what about next stack?!?
+  vanilla:existingGkeCluster: prodcluster
+  vanilla:arName: my-skaffold-cornucopia

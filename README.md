@@ -1,12 +1,12 @@
 # 🍦 Vanilla App
 
-My first vanilla App done with skaffold and done WELL.
+My first 🍦 Vanilla App done with skaffold and done WELL.
 
-self: go/ricc-vanilla
+self: [🇬 go/ricc-vanilla](http://go/ricc-vanilla)
 
 ## Apps
 
-* app/ helloworld in node.js with `expressjs`
+* app/ helloworld in node.js with `expressjs` with added Bubble JS functionality.
 
 How to deploy:
 
@@ -27,5 +27,5 @@ Some further ideas:
 
 Thanks to:
 * ([@wearehumaan](https://twitter.com/wearehumaan)) (the author of the '[Creating comic book speech bubbles with SVG and javascript](https://www.humaan.com/blog/creating-comic-book-speech-bubbles-with-svg-and-javascript/)' article) for the bubble idea.
-* cstanger for getting my DOM and Js together.
+* cstanger@ for getting my DOM and Js together.
 * [cgrotz](https://github.com/cgrotz/) for inspiring my Cloud run manifests
